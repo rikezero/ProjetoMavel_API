@@ -10,13 +10,11 @@ import kotlinx.coroutines.launch
 import repository.RepositoryMarvel
 
 
-class ViewModelMain : ViewModel() {
+class ViewModelComic : ViewModel() {
 
-    val comicResponse = MutableLiveData<MutableSet<Comic>>()
-    private val repositoryMarvel = RepositoryMarvel()
+    //val comicResponse = MutableLiveData<MutableSet<Comic>>()
+    //private val repositoryMarvel = RepositoryMarvel()
 
-    fun getResponse() = CoroutineScope(IO).launch {
-        comicResponse.postValue(repositoryMarvel.getComicService().comicsContainer.comics)
-    }
+
 }
 

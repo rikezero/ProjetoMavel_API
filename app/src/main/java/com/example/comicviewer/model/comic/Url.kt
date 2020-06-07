@@ -1,4 +1,4 @@
-package model.comic
+package com.example.comicviewer.model.comic
 
 
 import android.annotation.SuppressLint

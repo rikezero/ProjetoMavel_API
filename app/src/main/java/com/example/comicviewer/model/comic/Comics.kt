@@ -1,4 +1,4 @@
-package model.comic
+package com.example.comicviewer.model.comic
 
 
 import android.annotation.SuppressLint
@@ -8,15 +8,15 @@ import android.os.Parcelable
 
 @SuppressLint("ParcelCreator")
 @Parcelize
-data class ComicDataContainer(
-    @SerializedName("count")
-    val count: Int,
-    @SerializedName("limit")
-    val limit: Int,
+data class Comics(
     @SerializedName("offset")
     val offset: Int,
-    @SerializedName("results")
-    val comics: MutableSet<Comic>,
+    @SerializedName("limit")
+    val limit: Int,
     @SerializedName("total")
-    val total: Int
+    val total: Int,
+    @SerializedName("count")
+    val count: Int,
+    @SerializedName("results")
+    val comics: MutableSet<Comic>
 ) : Parcelable

@@ -1,4 +1,4 @@
-package model.comic
+package com.example.comicviewer.model.comic
 
 
 import android.annotation.SuppressLint
@@ -9,8 +9,12 @@ import android.os.Parcelable
 @SuppressLint("ParcelCreator")
 @Parcelize
 data class Image(
-    @SerializedName("extension")
-    val extension: String,
     @SerializedName("path")
-    val path: String
-) : Parcelable
+    val path: String,
+    @SerializedName("extension")
+    val extension: String
+) : Parcelable{
+    fun getImage(): String? {
+        return "$path.$extension"
+    }
+}

@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.comicviewer.base
 
 import android.content.Intent
@@ -6,7 +8,7 @@ import android.os.Build.VERSION.*
 import android.os.Process.killProcess
 import android.os.Process.myPid
 import android.viewbinding.BuildConfig.APPLICATION_ID
-import base.ActBase.Companion.currentActivity
+import com.example.comicviewer.base.ActBase.Companion.currentActivity
 import com.example.comicviewer.R
 
 import java.io.PrintWriter

@@ -1,4 +1,4 @@
-package model.comic
+package com.example.comicviewer.model.comic
 
 
 import android.annotation.SuppressLint
@@ -14,7 +14,7 @@ data class Events(
     @SerializedName("collectionURI")
     val collectionURI: String,
     @SerializedName("items")
-    val items: List<Item>,
+    val items: List<CharacterSummary>,
     @SerializedName("returned")
     val returned: Int
 ) : Parcelable

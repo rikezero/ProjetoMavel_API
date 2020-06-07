@@ -1,6 +1,6 @@
 package view
 
-import base.ActBind
+import com.example.comicviewer.base.ActBind
 import com.example.comicviewer.R
 import com.example.comicviewer.databinding.ActLoginBinding
 import custom.launchActivity
@@ -15,6 +15,7 @@ class ActLogin : ActBind<ActLoginBinding>() {
     private val viewModel by lazy { viewModel<ViewModelLogin>() }
 
     override fun ActLoginBinding.onBoundView() {
+
         button.setOnClickListener {
             if(viewModel.validade(userInput,passInput)){
                 toast(getString(R.string.empty_fields))

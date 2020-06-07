@@ -2,7 +2,7 @@ package view
 
 import android.content.Intent
 import android.os.Bundle
-import base.ActBase
+import com.example.comicviewer.base.ActBase
 
 
 class ActSplash : ActBase() {

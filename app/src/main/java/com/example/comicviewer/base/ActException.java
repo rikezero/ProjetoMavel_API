@@ -5,8 +5,8 @@ import android.support.annotation.Nullable;
 import android.widget.TextView;
 
 import com.example.comicviewer.R;
+import com.example.comicviewer.base.ActBase;
 
-import base.ActBase;
 
 import static com.example.comicviewer.base.ExceptionHandler.EXCEPTION_DEVICE;
 import static com.example.comicviewer.base.ExceptionHandler.EXCEPTION_LOG;

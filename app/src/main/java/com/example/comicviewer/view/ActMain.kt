@@ -1,19 +1,14 @@
 package view
 
-
-
-
-
-
 import android.annotation.SuppressLint
-import base.ActBind
+import android.arch.lifecycle.Observer
+import com.example.comicviewer.base.ActBind
 import com.example.comicviewer.databinding.ActMainBinding
-import custom.get
-import custom.recyclerAdapter
-import custom.viewModel
+import com.example.comicviewer.model.comic.Comic
+import custom.*
 import model.ItemViewComic
-import model.comic.ComicResponse
 import viewmodel.ViewModelMain
+
 
 
 @SuppressLint("Registered")
@@ -21,10 +16,24 @@ class ActMain : ActBind<ActMainBinding>() {
 
     override val binding by lazy { bind(ActMainBinding::class) }
     private val viewModel by lazy { viewModel<ViewModelMain>() }
-    val set = mutableSetOf<ComicResponse>()
-    val comics = set.get(0).comicDataContainer.comics
+    //lateinit var accessComic:AccessComic
+    val set = mutableSetOf<Comic>()
+
     override fun ActMainBinding.onBoundView() {
-        val adapter = recyclerAdapter<ItemViewComic>(comics)
+        //accessComic = DatabaseBuilder.getAppDatabase(activity).accessComic()
+        recyclerComic.adapter = recyclerAdapter<ItemViewComic>(set)
+
+        viewModel.comicResponse.observe(
+            activity,
+            Observer {
+                it?.run {
+                    //it.forEach { comic -> accessComic.insertAll(comic) }
+                    set.addAll(it)
+                    recyclerComic.update()
+                }
+            }
+        )
+        viewModel.getResponse()
     }
 
 

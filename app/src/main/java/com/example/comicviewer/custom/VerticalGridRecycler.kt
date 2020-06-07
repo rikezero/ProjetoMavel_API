@@ -11,6 +11,6 @@ class VerticalGridRecycler @JvmOverloads constructor(
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-        layoutManager = GridLayoutManager(context, 2, VERTICAL, false)
+        layoutManager = GridLayoutManager(context, 3, VERTICAL, false)
     }
 }

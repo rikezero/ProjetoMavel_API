@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.SearchView
@@ -77,6 +78,10 @@ fun <T : Comparable<T>> listOfRange(iterable: Iterable<T>): MutableList<T> {
     val list = mutableListOf<T>()
     iterable.forEach { list.add(it) }
     return list
+}
+
+fun <AnyView : View> AnyView.onClick(function: AnyView.() -> Unit = {}) {
+    setOnClickListener { function() }
 }
 
 @Suppress("UNCHECKED_CAST")

@@ -1,4 +1,4 @@
-package model.comic
+package com.example.comicviewer.model.comic
 
 
 import android.annotation.SuppressLint
@@ -9,8 +9,8 @@ import android.os.Parcelable
 @SuppressLint("ParcelCreator")
 @Parcelize
 data class Date(
-    @SerializedName("date")
-    val date: String,
     @SerializedName("type")
-    val type: String
+    val type: String,
+    @SerializedName("date")
+    val date: String
 ) : Parcelable

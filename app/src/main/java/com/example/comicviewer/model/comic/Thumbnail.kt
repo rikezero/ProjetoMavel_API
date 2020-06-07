@@ -1,17 +1,20 @@
-package model.comic
+package com.example.comicviewer.model.comic
 
 
 import android.annotation.SuppressLint
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
-import android.os.Parcelable
 
 @SuppressLint("ParcelCreator")
 @Parcelize
 data class Thumbnail(
-    @SerializedName("extension")
-    val extension: String,
     @SerializedName("path")
     val path: String,
-    val image: String = "$path/portrait_medium.$extension"
-) : Parcelable
+    @SerializedName("extension")
+    val extension: String
+) : Parcelable{
+    fun getStandardMedium(): String? {
+        return "$path.$extension"
+    }
+}

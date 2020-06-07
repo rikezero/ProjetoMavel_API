@@ -1,9 +1,8 @@
-package base
+package com.example.comicviewer.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import com.example.comicviewer.base.ExceptionHandler
 
 
 open class ActBase(open val layout: Any? = null) : AppCompatActivity() {
